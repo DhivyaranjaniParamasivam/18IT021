@@ -1,42 +1,7 @@
 
 <!DOCTYPE html>
 <html>
-<head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script type="text/javascript">
-var app = angular.module('myApp', []);
-// Creating Factory
-app.factory('myFactory', function () {
-var displayFact;
-var addMSG = function (msg) {
-displayFact = '  Welcome to ' + msg;
-}
-return {
-setMSG: function (msg) {
-addMSG(msg);
-},
-getMSG: function () {
-return displayFact;
-}
-};
-});
- 
-
- 
-app.controller("myCtrl", function ($scope,  myFactory) {
-//Inject factory and service both to controller.
-myFactory.setMSG("Course Checklist");
-
- 
-//Prepare a collection
-$scope.myCollections = [
-myFactory.getMSG(),
-
-];
-});
-</script>
-</head>
 <head>
     <meta charset="utf-8">
     <title>Fix the Schedule </title>
@@ -81,13 +46,12 @@ body {
 			<input type="hidden" ng-model="newcontact.id">
 			<input type="button" class="btn btn-primary" ng-click="saveContact()" class="btn btn-primary" value = "Submit">
 			<button onclick="myFunction()">Home Page</button>
-			<button onclick="myFunction()">Login</button>
+			
 
 <script>
 function myFunction() {
   location.replace("index.html")
-  location.replace("contact.html")
-}
+  }
 </script>
 
 		  </form>
