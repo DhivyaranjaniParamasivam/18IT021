@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2E2E2C;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+</style>
+
+<head>
+  <title>Dhivyaranjani</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Meet <span class="logo_colour">My Tutor</span></a></h1>
+          <h2>Learn English .</h2>
+        </div>
+      </div>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+ <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+<script>
+(function(angular) {
+  'use strict';
+angular.module('docsTimeDirective', [])
+  .controller('Controller', ['$scope', function($scope) {
+    $scope.format = 'M/d/yy h:mm:ss a';
+  }])
+  .directive('myCurrentTime', ['$interval', 'dateFilter', function($interval, dateFilter) {
+
+    function link(scope, element, attrs) {
+      var format,
+          timeoutId;
+
+      function updateTime() {
+        element.text(dateFilter(new Date(), format));
+      }
+
+      scope.$watch(attrs.myCurrentTime, function(value) {
+        format = value;
+        updateTime();
+      });
+
+      element.on('$destroy', function() {
+        $interval.cancel(timeoutId);
+      });
+
+      // start the UI update process; save the timeoutId for canceling
+      timeoutId = $interval(function() {
+        updateTime(); // update DOM
+      }, 1000);
+    }
+
+    return {
+      link: link
+    };
+  }]);
+})(window.angular);
+</script>
+
+  
+
+ 
+  
+
+  
+<body ng-app="docsTimeDirective">
+  <div ng-controller="Controller">
+  <p style="font-size:2vw; font-variant: bold;"> <span my-current-time="format"></span></p>
+</div>
+</body>
+
+	  <div class="topnav">
+  <a class="active" href="login.html">Log in</a>
+  <a href="reg.html">Create an Account</a>
+ 
+  <div class="topnav-right">
+  <a href="checklist/checklist.html">English CheckList</a>
+    <a href="#search">English Level Test</a>
+     
+    <a href="#about">TeachingEnglish</a>
+  </div>
+</div>
+
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="selected"><a href="index.html">Home</a></li>
+          <li><a href="examples.html">Online Courses</a></li>
+
+          <li><a href="another_page.html">Grammer And Vocabulary</a></li>
+           <li><a href="contact.html">Business and General English</a></li>
+		  
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+        <!-- insert your sidebar items here -->
+        
+		<h3>Search</h3>
+        <form method="post" action="#" id="search_form">
+          <p>
+            <input class="search" type="text" name="search_field" value="Enter keywords....." />
+            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="style/search.png" alt="Search" title="Search" />
+          </p>
+        </form>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+        <h4>New Website Launched</h4>
+        <h5>January 1st, 2010</h5>
+        <p>2010 sees the redesign of our website. Take a look around and let us know what you think.<br /><a href="#">Read more</a></p>
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="#">link 1</a></li>
+          <li><a href="#">link 2</a></li>
+          <li><a href="#">link 3</a></li>
+          <li><a href="#">link 4</a></li>
+        </ul>
+        
+      </div>
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1>Welcome to LearnEnglish</h1>
+        <p> Learn English online using our high-quality resources to quickly improve your English. This website is created for adult learners of English by the British Council, the world's English teaching experts.
+
+Start by taking our free English test to help you find your level. Then find lessons and resources to improve your English skills. Get more practice to improve your general English with our extended listening and reading materials. At any time, use the grammar and vocabulary sections to help and support your learning.
+
+Study with our self-access courses and take your English to the next level for a £5.99 monthly subscription. Find out more about our range of online classes and courses to improve your English. </p>
+        
+        <ul>
+          <li>Internet Explorer 8</li>
+          <li>Internet Explorer 7</li>
+          <li>FireFox 3.5</li>
+          <li>Google Chrome 6</li>
+          <li>Safari 4</li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      Copyright &copy; DhivyaParamasivam | <a href="http://validator.w3.org/check?uri=referer">Learn</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">English</a> | <a href="http://www.html5webtemplates.co.uk">design from TCE</a>
+    </div>
+  </div>
+</body>
+</html>
